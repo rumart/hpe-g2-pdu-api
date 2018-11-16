@@ -2,6 +2,8 @@
 
 The [HPE G2 PDUs](https://www.hpe.com/us/en/product-catalog/servers/power-distribution-units/pip.power-distribution-units.1009830118.html) ship with a REST API based on the Redfish standard. This is nice, but as of this writing the documentation for the API is completely missing.
 
+I wrote a [blog post](https://www.rudimartinsen.com/2018/11/19/exploring-the-hpe-g2-pdu-rest-api/) about how I explored the API to pull the data I wanted. Feel free to check it out for more information
+
 ## Postman collection
 
 I've created a Postman collection for some (if not all) of the available endpoints. Please note that I've only added GET examples.
