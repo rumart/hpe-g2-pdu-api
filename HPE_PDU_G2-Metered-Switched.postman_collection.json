@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "f3c2eb84-eac2-44dc-929f-05e62170d8ce",
+		"name": "HPE_PDU_G2-Metered-Switched",
+		"description": "# HPE G2 Metered and Switched PDU - REST API\n\nThis collection documents available endpoints in the Redfish based REST API for the [HPE G2 Metered and Switched PDUs](https://www.hpe.com/us/en/product-catalog/servers/power-distribution-units/pip.power-distribution-units.1009830118.html)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PDU details",
+			"item": [
+				{
+					"name": "Utilization",
+					"item": [
+						{
+							"name": "LoadsegmentMeasurement",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{mgmtIp}}/redfish/v1/PowerDistribution/{{pduId}}/PowerMeasurement/LoadsegmentMeasurement",
+									"protocol": "https",
+									"host": [
+										"{{mgmtIp}}"
+									],
+									"path": [
+										"redfish",
+										"v1",
+										"PowerDistribution",
+										"{{pduId}}",
+										"PowerMeasurement",
+										"LoadsegmentMeasurement"
+									]
+								},
+								"description": "Power Measurement details for the loadsegment"
+							},
+							"response": []
+						},
+						{
+							"name": "OutletMeasurement",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{mgmtIp}}/redfish/v1/PowerDistribution/{{pduId}}/PowerMeasurement/Loadsegment/{{segmentId}}/OutletMeasurement",
+									"protocol": "https",
+									"host": [
+										"{{mgmtIp}}"
+									],
+									"path": [
+										"redfish",
+										"v1",
+										"PowerDistribution",
+										"{{pduId}}",
+										"PowerMeasurement",
+										"Loadsegment",
+										"{{segmentId}}",
+										"OutletMeasurement"
+									]
+								},
+								"description": "Mesurement details for the Outlet per loadsegment"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "PowerDistributionList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{mgmtIp}}/redfish/v1/RackPower/PowerDistribution",
+							"protocol": "https",
+							"host": [
+								"{{mgmtIp}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"RackPower",
+								"PowerDistribution"
+							]
+						},
+						"description": "Power Distribution Details"
+					},
+					"response": []
+				},
+				{
+					"name": "PowerDistributionUnit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{mgmtIp}}/redfish/v1/PowerDistribution/{{pduId}}",
+							"protocol": "https",
+							"host": [
+								"{{mgmtIp}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"PowerDistribution",
+								"{{pduId}}"
+							]
+						},
+						"description": "Show details about a PDU"
+					},
+					"response": []
+				},
+				{
+					"name": "OutletControl",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{mgmtIp}}/redfish/v1/PowerDistribution/{{pduId}}/PowerControl/Loadsegment/{{segmentId}}/OutletControl",
+							"protocol": "https",
+							"host": [
+								"{{mgmtIp}}"
+							],
+							"path": [
+								"redfish",
+								"v1",
+								"PowerDistribution",
+								"{{pduId}}",
+								"PowerControl",
+								"Loadsegment",
+								"{{segmentId}}",
+								"OutletControl"
+							]
+						},
+						"description": "Control the Outlet"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6681103f-185f-47ad-838f-8d1e8138c8c4",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fa1b67c3-6ed4-426a-9938-f4848dbecd77",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Schemas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{mgmtIp}}/redfish/v1/Schemas",
+					"protocol": "https",
+					"host": [
+						"{{mgmtIp}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"Schemas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Managers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{mgmtIp}}/redfish/v1/Managers",
+					"protocol": "https",
+					"host": [
+						"{{mgmtIp}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"Managers"
+					]
+				},
+				"description": "Managers view"
+			},
+			"response": []
+		},
+		{
+			"name": "SessionService",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{mgmtIp}}/redfish/v1/SessionService",
+					"protocol": "https",
+					"host": [
+						"{{mgmtIp}}"
+					],
+					"path": [
+						"redfish",
+						"v1",
+						"SessionService"
+					]
+				},
+				"description": "Session service"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "admin",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "239a729f-a348-4ce8-bda4-f78f1027a96f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "646a60a6-ee03-44fc-b65b-ea3ed4b18755",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "c916083d-8a9f-43c2-b8c4-72b49b9f1daf",
+			"key": "mgmtIp",
+			"value": "10.10.10.10",
+			"type": "string"
+		},
+		{
+			"id": "a5e9832c-9ad3-4ff9-98d8-2cf62a95dc0b",
+			"key": "pduId",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"id": "2eb10ade-72c1-4abd-b579-90190c5fecc6",
+			"key": "segmentId",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
